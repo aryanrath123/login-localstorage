@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1e2d, #28293d);
+  color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  margin: 20px 0;
+  transition: transform 0.2s ease-in-out;
+}
+
+.box h2 {
+  color: #00aaff;
+  margin-bottom: 15px;
+}
+
+.box input[type="text"],
+.box input[type="email"],
+.box input[type="password"],
+.box input[type="file"] {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #f0f0f0;
+}
+
+.box input::placeholder {
+  color: rgba(
+    240,
+    240,
+    240,
+    0.7
+  ); /* Lighter placeholder color for visibility */
+}
+
+.box label {
+  color: #f0f0f0; /* Ensure the label is visible */
+  display: block; /* Make sure the label is block to ensure spacing */
+  margin-bottom: 5px; /* Add spacing below the label */
+}
+
+.box button {
+  width: 85%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #00aaff;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.box button:hover {
+  background-color: #0088cc;
+  transform: translateY(-3px);
+}
+
+.box img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 15px 0;
+}
+
+.box p {
+  margin-top: 10px;
+}
+
+.box a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+.box a:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Hover and click effect */
+.box button:active {
+  transform: translateY(0);
+}
+
+/* Optional: Add transitions for a smoother 3D effect */
+.tilt {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.tilt:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.modal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears on top of other elements */
+}
