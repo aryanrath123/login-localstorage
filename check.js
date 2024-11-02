@@ -44,7 +44,8 @@ function login() {
   const userData = JSON.parse(localStorage.getItem(username));
   if (userData && userData.password === password) {
     alert("Login successful!");
-    displayUserProfile(userData.username, userData.profilePic);
+    // Redirect to Streamlit app with a token
+    window.location.href = `http://localhost:8501/?token=loggedin`; // Pointing to your local Streamlit URL
   } else {
     alert("Login failed: Invalid username or password.");
   }
@@ -173,13 +174,13 @@ function updateProfile() {
   if (profilePic) {
     const reader = new FileReader();
     reader.onload = function (event) {
-        if (profileImage) {
-          profileImage.src = event.target.result;
-          userData.profilePic = event.target.result; // Update profilePic in userData
-          localStorage.setItem(userData.username, JSON.stringify(userData)); // Save updated user data with new picture
-        }
-      };
-      
+      if (profileImage) {
+        profileImage.src = event.target.result;
+        userData.profilePic = event.target.result; // Update profilePic in userData
+        localStorage.setItem(userData.username, JSON.stringify(userData)); // Save updated user data with new picture
+      }
+    };
+
     reader.readAsDataURL(profilePic);
   }
 
